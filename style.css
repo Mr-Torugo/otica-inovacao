@@ -434,6 +434,7 @@
     margin: 0 0 30px 0;
 }
 
+
 .service-card-btn {
     font-size: 24px;
     width: 400px;
@@ -441,6 +442,142 @@
     gap: 15px;
     align-self: center;
     margin-top: auto;
+}
+
+.services-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.service-card-modern {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background-color: #000;
+
+}
+
+
+.service-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+
+}
+
+
+.service-card-modern:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 2;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
+}
+
+.card-content h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    /* Usa sua cor amarela/principal */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-content h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.card-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.btn-card:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.btn-card i {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .service-card-modern {
+        width: 100%;
+        height: 450px;
+    }
+
+    .card-content h3 {
+        font-size: 24px;
+    }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .service-card-modern {
+        width: 100%;
+        /* No celular ocupa a largura toda */
+        height: 450px;
+    }
+
+    .card-content h3 {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 1200px) {
